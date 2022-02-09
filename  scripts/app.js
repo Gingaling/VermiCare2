@@ -1,4 +1,17 @@
-console.log("Welcome to Poke-A-Square...");
+console.log("Welcome to worm's world!");
+
+
+
+// Call createSquares
+
+$('button #start').on('click', () => {
+    console.log("yo");
+    // Set up logic if game is new or ongoing
+    // setUpRound();
+    // setInterval(updateTimer, 1000);
+ })
+
+
 let time = 30;
 
 // == User Stories/game logic == //
@@ -72,12 +85,6 @@ let score = 0;
         }
     };
 
-// Call createSquares
-
-$('button').on('click', () => {
-   setUpRound();
-   setInterval(updateTimer, 1000);
-})
 
 const setUpRound = () => {
     $('.squares').empty();
