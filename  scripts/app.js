@@ -1,6 +1,7 @@
-$('button').on('click', () => {
-    console.log("yo");
-    // Set up logic if game is new or ongoing
-    // setUpRound();
-    // setInterval(updateTimer, 1000);
- })
+console.log("%c[scripts/app.js] Loaded", "background:orange; padding:10px");
+
+function sayHello() {
+    console.log("Hello");
+}
+
+$('button').on('click', sayHello());
