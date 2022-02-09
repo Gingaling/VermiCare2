@@ -4,6 +4,16 @@
   background-size: cover;
   /* box-sizing: border-box; */
 }
+div {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+section {
+  height: 200px;
+  max-width: 100%;
+}
 
 title {
   text-align: center;
@@ -35,6 +45,7 @@ header {
 }
 
 button {
+  align-self: center;
   border: 30px;
   font-weight: bolder;
   float: right;
@@ -46,3 +57,11 @@ button {
   background-color: rgb(116, 116, 192);
   border-radius: 20px;
 }
+/* 
+#begin {
+  display: inline-block;
+  margin: 0 0.5rem;
+
+  animation: bounce; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
+} */
