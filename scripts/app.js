@@ -60,6 +60,7 @@ const round = {
         $('#hunger').text(`Hunger Level: ${this.hunger}`);
         if (this.hunger >= 10) {
             this.roundOver();
+            $("img").attr("src", 'https://i.imgur.com/8JziIra.gif');
             $("#death").text(`${wormName} has died from starvation. You should rethink future worm ownership.`);
         };
     },
@@ -75,6 +76,7 @@ const round = {
         $('#sleepiness').text(`Sleepiness Level: ${this.sleepiness}`);
         if (this.sleepiness >= 10) {
             this.roundOver();
+            $("img").attr("src", 'https://i.imgur.com/8JziIra.gif');
             $("#death").text(`${wormName} has died from sleep deprivation. You should rethink future worm ownership.`);
         };
     },
@@ -89,6 +91,7 @@ const round = {
         $('#boredom').text(`Boredom Level: ${round.boredom}`);
         if (this.boredom >= 10) {
             this.roundOver();
+            $("img").attr("src", 'https://i.imgur.com/8JziIra.gif');
             $("#death").text(`${wormName} has died from neglect. You should rethink future worm ownership.`);
         };
     },
