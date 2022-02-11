@@ -20,6 +20,7 @@ const round = {
     ],
     
     start(e) {
+        $("#care").text(`Your care of ${wormName} has officially begun!`);
         this.startAgeTimer();
         this.startHungerTimer();
         this.startSleepinessTimer();
