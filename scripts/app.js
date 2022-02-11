@@ -27,14 +27,14 @@ const round = {
         this.startNaughtinessTimer();
     },
     
-    /* === Timers for Hunger, Age, Sleepiness, Boredom and Naughtiness
-    === */
-    
+    /* === Timers for Hunger, Age, Sleepiness, Boredom and Naughtiness & Methods to Increase the Metrics === */
+    /* === Also included are the death announcements === */
     ageTimer: null,
     startAgeTimer() {
         this.ageTimer = setInterval(this.increaseAge.bind(round), 3000);
     },
     
+    /* === Includes Dealing with MVP of Changing the Aging Pet */
     increaseAge() {
         this.age++ ;
         $('#age').text(`Age: ${this.age}`);
@@ -96,19 +96,20 @@ const round = {
         };
     },
     
-    naughtinessTimer: null,
-    startNaughtinessTimer() {
-        this.naughtinessTimer = setInterval(this.increaseNaughtiness.bind(round), 5000);
-    },
+
+    /* === Originally I planned on having a naughtiness counter. It would increase at a slower rate. But once it hit a certain amount, user would have the opportunity to punish. The user would then hava reprieve from her worm care duties for an interval TBD. === */
+    // naughtinessTimer: null,
+    // startNaughtinessTimer() {
+    //     this.naughtinessTimer = setInterval(this.increaseNaughtiness.bind(round), 5000);
+    // },
     
-    increaseNaughtiness() {
-        this.naughtiness = this.naughtiness + Math.floor(Math.random * 1000);
-        $('#naughtiness').text(`Naughtiness Level: ${this.sleepiness}`)
-    },
+    // increaseNaughtiness() {
+    //     this.naughtiness = this.naughtiness + Math.floor(Math.random * 1000);
+    //     $('#naughtiness').text(`Naughtiness Level: ${this.sleepiness}`)
+    // },
     
     
-    /* Increasing and Decreasing Timers */
-    
+    /* === Decreasing Levels === */
     decreaseHunger() {
         this.hunger-- ;
         $('#hunger').text(`Hunger Level: ${this.hunger}`);
@@ -125,6 +126,7 @@ const round = {
         $('#boredom').text(`Boredom Level: ${this.boredom}`);
     },
     
+    /* === Ending the Round === */
     roundOver() {
         clearInterval(this.ageTimer);
         clearInterval(this.hungerTimer);
@@ -134,7 +136,7 @@ const round = {
     }
 }
 
-/* Event Listeners */
+/* === Event Listeners === */
 $("#feed").click(() => {
     round.decreaseHunger();
     $('#hunger').text(`Hunger Level: ${round.hunger}`);
