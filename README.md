@@ -1,4 +1,7 @@
 # VermiCare2
+
+https://gingaling.github.io/VermiCare2/
+
 VermiCare2 is a contemporary and whimsical take on the classic handheld digital pet Tamagotchi, popular in the late 1990's and early 2000's. Do you have what it takes to raise your pet, right?
 
 USER STORIES<br>
