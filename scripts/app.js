@@ -1,8 +1,7 @@
 console.log("%c[scripts/app.js] Loaded", "background:orange; padding:10px");
 
-
-
-const wormName = prompt("Please let us know what you would like to call your pet worm.").val;
+let wormName = prompt("Please let us know what you would like to call your pet worm.");
+// const wormName = prompt("Please let us know what you would like to call your pet worm.").val;
 
 /* Round of Vermicare */
 const round = {
@@ -13,7 +12,6 @@ const round = {
     boredom: 0,
     naughtiness: 0,
     button: [ 
-        // $("#begin")
         $("#feed"),
         $("#feed-apple"),
         $("#sleep"),
@@ -42,7 +40,7 @@ const round = {
         $('#age').text(`Age: ${this.age}`);
         if (this.age >= 20) {
             this.roundOver();
-            console.log(`${this.name} has died of natural causes. Please consider future worm care.`);            
+            $("#death").text(`${wormName} has died of natural causes. Please consider future worm care.`);            
         };
     },
     
@@ -56,7 +54,7 @@ const round = {
         $('#hunger').text(`Hunger Level: ${this.hunger}`);
         if (this.hunger >= 10) {
             this.roundOver();
-            console.log(`${this.name} has died from starvation. You should rethiink worm ownership in the future.`);
+            $("#death").text(`${wormName} has died from starvation. You should rethiink worm ownership in the future.`);
         };
     },
     
@@ -68,10 +66,10 @@ const round = {
     increaseSleepiness() {
         this.sleepiness++ ;
         console.log(this.sleepiness);
-        $('#sleepiness').text(`Sleepines Level: ${this.sleepiness}`);
+        $('#sleepiness').text(`Sleepiness Level: ${this.sleepiness}`);
         if (this.sleepiness >= 10) {
             this.roundOver();
-            console.log(`${wormName} has died from sleep deprivation. You should rethiink worm ownership in the future.`);
+            $("#death").text(`${wormName} has died from sleep deprivation. You should rethiink worm ownership in the future.`);
         };
     },
     
@@ -85,7 +83,7 @@ const round = {
         $('#boredom').text(`Boredom Level: ${round.boredom}`);
         if (this.boredom >= 10) {
             this.roundOver();
-            console.log(`${this.name} has died from neglect. You should rethiink worm ownership in the future.`);
+            $("#death").text(`${wormName} has died from neglect. You should rethiink worm ownership in the future.`);
         };
     },
     
@@ -110,7 +108,7 @@ const round = {
     
     decreaseSleepiness() {
         this.sleepiness--;
-        $('#sleepiness').text(`Sleepines Level: ${this.sleepiness}`);
+        $('#sleepiness').text(`Sleepiness Level: ${round.sleepiness}`);
     },
     
     decreaseBoredom() {
@@ -130,55 +128,30 @@ const round = {
 /* Event Listeners */
 $("#feed").click(() => {
     round.decreaseHunger();
-    $('#hunger').text(`Hunger Level: ${this.hunger}`);
+    $('#hunger').text(`Hunger Level: ${round.hunger}`);
 })
 
 $("#feed-apple").click(() => {
     round.decreaseHunger();
     round.decreaseHunger();
-    $('#hunger').text(`Hunger Level: ${this.hunger}`);
+    $('#hunger').text(`Hunger Level: ${round.hunger}`);
 })
 
 $("#sleep").click(() => {
     round.decreaseSleepiness();
-    $('#sleepiness').text(`Sleepines Level: ${this.sleepiness}`);
+    $('#sleepiness').text(`Sleepiness Level: ${round.sleepiness}`);
 })
 
 $("#play").click(() => {
     round.decreaseBoredom();
-    $('#boredom').text(`Boredom Level: ${this.boredom}`);
+    $('#boredom').text(`Boredom Level: ${round.boredom}`);
 })
 
 $("#read").click(() => {
     round.decreaseBoredom();
-    $('#boredom').text(`Boredom Level: ${this.boredom}`);
+    $('#boredom').text(`Boredom Level: ${round.boredom}`);
     
 })
 
 
 $("#begin").on('click', round.start());
-
-
-// this.start();
-
-
-
-    // class Worm {
-    //     constructor () {
-        //         this.name = name;
-        //         this.age = age
-        //         this.hunger = hunger;
-        //         this.sleepiness = sleepiness;
-        //         this.boredom = boredom;
-        //         this.naughtiness = naughtiness;
-        //     }
-        
-        // method1
-        // methodd2
-    // }
-    
-    
-    // function createWorm {
-        //     const newWorm = new Worm
-        // }
-        
