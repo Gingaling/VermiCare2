@@ -19,43 +19,43 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href='./styles/style.css'>
-
+  
   <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+  
+  
   <title>An Apple a Day for Wormy</title>
-
+  
 </head>
 <body>
-  <h1>Welcome to An Apple a Day for Wormy!
-    <span id="stmt-1">Would you like to begin caring for Wormy?></span>
-    <span id="stmt-2">(press begin if so)</span>
-  </h1>
-    <button id="begin" >Begin</button>
+  <div id="top-area">
+  <h1>Welcome to An Apple a Day for Wormy!<br>
+    Would you like to begin caring for Wormy?<br>
+    (press begin if so)<br>
+  <button id="begin">Begin</button>
+</div>
+
   <div id="worm-world">
   </div>
-  <div id="worm-area">I am in the worm area</div>
-  <div id="bottom-console">Statistics</div>
 
-<!--should fade out -->
-<!--   
-  <div id="player-setup">          <!-- should fade in -->
-    <!-- <section id="worm-activity">
-      <aside>
-      
-      </aside>
-    </section>
-    <Section id="user-activity">
-    <nav>
+  
+  <div id="bottom-console">Statistics
+    <span id="age"></span>
+  <!-- <span id="naughtiness"></span> -->
+  <span id="hunger"></span>
+  <button id="feed">feed me</button>
+  <button id="feed-apple">feed me an apple</button>
+  
+  <span id="sleepiness"></span>
+  <button id="sleep">let me sleep</button>
+  
+  <span id="boredom"><br></span>
+  <button id="play">play with me</button>
+  <button id="read">read to me</button>
 
-    </nav>
-  </Section>
-
-
-  </div> -->
+</div>
   <!-- Main JS -->
   <script src="scripts/app.js"></script>
-
 </body>
 
 </html>
