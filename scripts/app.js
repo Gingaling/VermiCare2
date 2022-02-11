@@ -38,9 +38,15 @@ const round = {
     increaseAge() {
         this.age++ ;
         $('#age').text(`Age: ${this.age}`);
+        if (this.age === 4) {
+            $("img").attr("src", 'https://i.imgur.com/zq1YyJc.gif');
+          };
+          if (this.age === 10) {
+            $("img").attr("src", 'https://i.imgur.com/ix7WzjK.gif');
+          };
         if (this.age >= 20) {
             this.roundOver();
-            $("#death").text(`${wormName} has died of natural causes. Please consider future worm care.`);            
+            $("#death").text(`${wormName} has died of natural causes. You were very caring. Please consider future worm care.`);            
         };
     },
     
@@ -54,7 +60,7 @@ const round = {
         $('#hunger').text(`Hunger Level: ${this.hunger}`);
         if (this.hunger >= 10) {
             this.roundOver();
-            $("#death").text(`${wormName} has died from starvation. You should rethiink worm ownership in the future.`);
+            $("#death").text(`${wormName} has died from starvation. You should rethink future worm ownership.`);
         };
     },
     
@@ -69,7 +75,7 @@ const round = {
         $('#sleepiness').text(`Sleepiness Level: ${this.sleepiness}`);
         if (this.sleepiness >= 10) {
             this.roundOver();
-            $("#death").text(`${wormName} has died from sleep deprivation. You should rethiink worm ownership in the future.`);
+            $("#death").text(`${wormName} has died from sleep deprivation. You should rethink future worm ownership.`);
         };
     },
     
@@ -83,7 +89,7 @@ const round = {
         $('#boredom').text(`Boredom Level: ${round.boredom}`);
         if (this.boredom >= 10) {
             this.roundOver();
-            $("#death").text(`${wormName} has died from neglect. You should rethiink worm ownership in the future.`);
+            $("#death").text(`${wormName} has died from neglect. You should rethink future worm ownership.`);
         };
     },
     
